@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "myspaceazure"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "myspaceazure"
+    spec:
+      containers:
+        - name: "myspaceazure"
+          image: "300druid.azurecr.io/myspaceazure"
+          ports:
+          - containerPort: 80
