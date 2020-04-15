@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "myspaceazure"
+    labels:
+        app: "myspaceazure"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: myspaceazure175f-myspaceazure.a5bec623d2734f7eb3b6.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "myspaceazure"
+                servicePort: 80
